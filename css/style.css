@@ -25,7 +25,9 @@ header {
     width: 30%;
     padding: 1rem 2rem;
 }
-
+.brandLogo{
+    text-decoration: none;
+}
 .brand{
     width: 10vw;
     font-weight: bolder;
