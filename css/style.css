@@ -39,6 +39,7 @@ header {
     width: 70%;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     margin-right: 1rem
 }
 
@@ -46,12 +47,12 @@ header {
     list-style: none;
     display: flex;
     padding: 1.2rem 0rem;
-    width: 40rem;
+    width: 100%;
     justify-content: flex-end;
 }
 
 .right ul li{
-    padding: 0rem 1rem;
+    padding: 0px 11px;
 }
 
 .right ul a{
@@ -126,6 +127,16 @@ header {
     border-radius: 1rem;
     margin: 0rem 1rem;
 }
+
+.skills p{
+    margin: 0.5rem 0;
+    color: rgb(71, 71, 71);
+    font-size: large;
+}
+.skills p span{
+    font-weight: bold;
+}
+
 .box h2{
     margin-bottom: .7rem;
     color: rgb(71, 71, 71);
@@ -145,6 +156,7 @@ header {
 }
 .testItems{
     display: flex;
+    gap: 8px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
