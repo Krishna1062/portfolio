@@ -1,126 +1,557 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/portfolio/css/style.css">
-    <link rel="stylesheet" href="/portfolio/css/resp.css">
-    <link rel="shortcut icon" href="images/logo.jpg" type="image/x-icon">
-    <title>Krishna Shinde - Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Krishna Shinde — Software Developer focused on Java, Spring Boot, React, DSA and backend systems." />
+  <meta name="theme-color" content="#070707" />
+  <title>Krishna Shinde — Software Developer</title>
+
+  <!-- Tailwind Play CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+            mono: ["JetBrains Mono", "ui-monospace", "SFMono-Regular", "monospace"]
+          },
+          animation: {
+            "float": "float 6s ease-in-out infinite",
+            "pulse-slow": "pulse 3s ease-in-out infinite",
+            "marquee": "marquee 22s linear infinite"
+          },
+          keyframes: {
+            float: {
+              "0%, 100%": { transform: "translateY(0)" },
+              "50%": { transform: "translateY(-10px)" }
+            },
+            marquee: {
+              "0%": { transform: "translateX(0)" },
+              "100%": { transform: "translateX(-50%)" }
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    ::selection { background: #ffffff; color: #000000; }
+    body { background: #070707; }
+    .grid-bg {
+      background-image:
+        linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: linear-gradient(to bottom, black 0%, transparent 72%);
+      -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 72%);
+    }
+    .glow {
+      box-shadow: 0 0 80px rgba(255,255,255,.07);
+    }
+    .card {
+      background: linear-gradient(145deg, rgba(255,255,255,.065), rgba(255,255,255,.025));
+      border: 1px solid rgba(255,255,255,.09);
+    }
+    .card:hover {
+      border-color: rgba(255,255,255,.22);
+      transform: translateY(-4px);
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .noise {
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.035'/%3E%3C/svg%3E");
+    }
+  </style>
 </head>
 
-<body>
- 
-        <header class="background">
-            <nav class="left">
-                <h1><a class="brandLogo" href="/portfolio/"><span class="brand">Krishna Shinde</span></a></h1>
-            </nav>
-            <nav class="right">
-                <ul>
-                    <li><a href="/portfolio/">Home</a></li>
-                    <li><a href="/portfolio/resume.html">Resume</a></li>
-                    <li><a href="/portfolio/projects.html">My projects</a></li>
-                    <li><a href="https://www.linkedin.com/in/imkrishnashinde/" target="_blank">LinkedIn</a></li>
-                    <li><a href="https://leetcode.com/imkrishnashinde" target="_blank">Leetcode</a></li>
-                    <li><a href="/portfolio/certificate.html">My certificates</a></li>
-                    <li><a href="/portfolio/#contact">Contact me</a></li>
-                    <li><a href="/portfolio/#about">About me</a></li>
-                </ul>
-            </nav>
-            <div class="burger" id="burger">
-                <svg class="lines h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <title>Menu</title>
-                    <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
-                </svg>
-            </div>
-        </header>
-        <section class="background" id="home">
-        <div class="home">
-            <img src="images/img.png" alt="">
-            <div class="home-1">
-                <p>I build robust, production-ready backend systems using Spring Boot and the Java ecosystem. My experience includes designing RESTful APIs, handling authentication and security with Spring Security, and integrating databases like MySQL and MongoDB for scalable data management.
-                </p><br>
-                <p>I'm also well-versed in Data Structures and Algorithms (DSA) and consistently apply problem-solving techniques to write efficient code. My strong foundation in DSA enables me to tackle complex technical challenges with confidence.</p><br>
-                <p>In addition to my technical skills, I possess excellent communication and collaboration abilities, allowing me to work effectively in team environments and convey complex ideas clearly.</p>
-                <a style="margin: 0 2px;" href="https://github.com/Krishna1062" target="_blank"><button class="btn">Github</button></a>
-                <a style="margin: 0 2px;" href="/portfolio/projects.html"><button class="btn">View Projects</button></a>
-                <a style="margin: 0 2px;" href="https://www.algoflame.com/" target="_blank"><button class="btn">View Blog</button></a>
-            </div>
+<body class="font-sans text-white antialiased noise">
+
+  <!-- Background -->
+  <div class="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+    <div class="grid-bg absolute inset-0"></div>
+    <div class="absolute left-1/2 top-[-260px] h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-white/[.035] blur-3xl"></div>
+  </div>
+
+  <!-- NAVBAR -->
+  <header class="fixed left-0 right-0 top-0 z-50">
+    <nav class="mx-auto mt-4 flex max-w-6xl items-center justify-between rounded-2xl border border-white/10 bg-black/65 px-4 py-3 backdrop-blur-xl sm:px-5">
+
+      <a href="/portfolio/" class="flex items-center gap-3">
+        <img src="/portfolio/images/pfp.png" alt="KS" class="grid h-9 w-9 place-items-center rounded-xl border border-white/15 bg-white/5 font-mono text-sm font-semibold">
+        <span class="hidden text-sm font-semibold sm:block">Krishna Shinde</span>
+      </a>
+
+      <div class="hidden items-center gap-6 text-sm text-zinc-400 md:flex">
+        <a href="/portfolio/" class="text-white">Home</a>
+        <a href="/portfolio/#about" class="transition hover:text-white">About</a>
+        <a href="/portfolio/#skills" class="transition hover:text-white">Skills</a>
+        <a href="/portfolio/projects.html" class="transition hover:text-white">Projects</a>
+        <a href="/portfolio/#profiles" class="transition hover:text-white">Profiles</a>
+        <a href="/portfolio/#contact" class="transition hover:text-white">Contact</a>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <a href="/portfolio/resume.html"
+           class="hidden rounded-xl border border-white/10 px-4 py-2 text-sm font-medium text-zinc-200 transition hover:border-white/25 hover:bg-white/5 sm:block">
+          Resume
+        </a>
+
+        <button id="menuBtn" aria-label="Open menu"
+          class="grid h-10 w-10 place-items-center rounded-xl border border-white/10 bg-white/5 md:hidden">
+          <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+            <path d="M4 7h16M4 12h16M4 17h16"/>
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <div id="mobileMenu" class="mx-4 mt-2 hidden rounded-2xl border border-white/10 bg-black/95 p-3 backdrop-blur-xl md:hidden">
+      <a href="/portfolio/" class="block rounded-xl px-4 py-3 text-zinc-300 hover:bg-white/5 hover:text-white">Home</a>
+      <a href="/portfolio/#about" class="block rounded-xl px-4 py-3 text-zinc-300 hover:bg-white/5 hover:text-white">About</a>
+      <a href="/portfolio/#skills" class="block rounded-xl px-4 py-3 text-zinc-300 hover:bg-white/5 hover:text-white">Skills</a>
+      <a href="/portfolio/projects.html" class="block rounded-xl bg-white/5 px-4 py-3 text-white">Projects</a>
+      <a href="/portfolio/#profiles" class="block rounded-xl px-4 py-3 text-zinc-300 hover:bg-white/5 hover:text-white">Profiles</a>
+      <a href="/portfolio/#contact" class="block rounded-xl px-4 py-3 text-zinc-300 hover:bg-white/5 hover:text-white">Contact</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="home" class="relative mx-auto flex min-h-screen max-w-6xl items-center px-5 pb-20 pt-32 sm:px-8">
+      <div class="grid w-full items-center gap-14 lg:grid-cols-[1.3fr_.7fr]">
+        <div class="reveal">
+          <div class="mb-7 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[.04] px-3 py-1.5 font-mono text-xs text-zinc-300">
+            <span class="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400"></span>
+            OPEN TO SOFTWARE DEVELOPMENT OPPORTUNITIES
+          </div>
+
+          <p class="mb-4 font-mono text-sm text-zinc-500">HELLO, I'M KRISHNA 👋</p>
+
+          <h1 class="max-w-4xl text-5xl font-extrabold leading-[.98] tracking-[-.055em] sm:text-7xl lg:text-[88px]">
+            Building useful Systems.
+          </h1>
+
+          <p class="mt-7 max-w-2xl text-base leading-7 text-zinc-400 sm:text-lg">
+            I build backend-focused web applications with <span class="text-white">Java, Spring Boot, SQL and React</span>.
+            I also enjoy solving DSA problems and turning ideas into working products.
+          </p>
+
+          <div class="mt-9 flex flex-wrap gap-3">
+            <a href="#projects" class="group inline-flex items-center gap-2 rounded-xl bg-white px-5 py-3.5 text-sm font-semibold text-black transition hover:bg-zinc-200">
+              View Projects
+              <span class="transition group-hover:translate-x-1">→</span>
+            </a>
+            <a href="https://github.com/Krishna1062" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/[.04] px-5 py-3.5 text-sm font-semibold text-white transition hover:border-white/25 hover:bg-white/[.08]">
+              GitHub ↗
+            </a>
+            <a href="resume.html" class="inline-flex items-center gap-2 rounded-xl border border-white/10 px-5 py-3.5 text-sm font-semibold text-zinc-300 transition hover:bg-white/[.05]">
+              Resume
+            </a>
+          </div>
+
+          <div class="mt-12 flex flex-wrap items-center gap-x-6 gap-y-3 font-mono text-xs text-zinc-500">
+            <span>JAVA</span><span>SPRING BOOT</span><span>REACT</span><span>MYSQL</span><span>DSA</span>
+          </div>
         </div>
+
+        <div class="reveal relative hidden lg:block">
+          <div class="glow absolute -inset-8 rounded-full bg-white/[.025] blur-3xl"></div>
+          <div class="relative mx-auto max-w-sm animate-float rounded-3xl border border-white/10 bg-[#0c0c0c]/90 p-5">
+            <div class="flex items-center justify-between border-b border-white/10 pb-4">
+              <div class="flex items-center gap-2">
+                <span class="h-2.5 w-2.5 rounded-full bg-red-400/70"></span>
+                <span class="h-2.5 w-2.5 rounded-full bg-yellow-400/70"></span>
+                <span class="h-2.5 w-2.5 rounded-full bg-green-400/70"></span>
+              </div>
+              <span class="font-mono text-[10px] text-zinc-600">Krishna.java</span>
+            </div>
+            <pre class="mt-5 overflow-hidden font-mono text-xs leading-7 text-zinc-400"><code><span class="text-zinc-600">01</span> <span class="text-purple-300">public class</span> <span class="text-white">Krishna</span> {
+<span class="text-zinc-600">02</span>
+<span class="text-zinc-600">03</span>   <span class="text-purple-300">String</span> focus = <span class="text-emerald-300">"Backend"</span>;
+<span class="text-zinc-600">04</span>   <span class="text-purple-300">String</span> stack = <span class="text-emerald-300">"Java + Spring"</span>;
+<span class="text-zinc-600">05</span>   <span class="text-purple-300">String</span> database = <span class="text-emerald-300">"SQL"</span>;
+<span class="text-zinc-600">06</span>
+<span class="text-zinc-600">07</span>   <span class="text-purple-300">boolean</span> learning = <span class="text-blue-300">true</span>;
+<span class="text-zinc-600">08</span>   <span class="text-purple-300">boolean</span> shipping = <span class="text-blue-300">true</span>;
+<span class="text-zinc-600">09</span> }</code></pre>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section id="projects" class="projs">
-        <span class="title">Technical Skills</span>
-        <div class="projItems">
-            <div class="box mb-1 skills">
-                <p><span>Problem Solving:</span> Data Structures and Algorithms (DSA)</p>
-                <p><span>Frontend:</span> React.js, Bootstrap, Tailwind CSS</p>
-                <p><span>Backend:</span> Spring, Spring Boot</p>
-                <p><span>Database:</span> SQL, MongoDB</p>
-                <p><span>Version Control:</span> Git, GitHub</p>
-                <p><span>Languages:</span> C++, Java, JavaScript, HTML, CSS</p>
-            </div>
+    <!-- STATS -->
+    <section class="border-y border-white/[.07] bg-white/[.015]">
+      <div class="mx-auto grid max-w-6xl grid-cols-2 divide-x divide-white/[.07] sm:grid-cols-4">
+        <div class="px-5 py-7 text-center">
+          <p class="text-2xl font-bold">200+</p>
+          <p class="mt-1 font-mono text-[10px] uppercase tracking-widest text-zinc-500">LeetCode Problems</p>
+        </div>
+        <div class="px-5 py-7 text-center">
+          <p class="text-2xl font-bold">10+</p>
+          <p class="mt-1 font-mono text-[10px] uppercase tracking-widest text-zinc-500">Projects</p>
+        </div>
+        <div class="border-t border-white/[.07] px-5 py-7 text-center sm:border-t-0">
+          <p class="text-2xl font-bold">50+</p>
+          <p class="mt-1 font-mono text-[10px] uppercase tracking-widest text-zinc-500">Technical Articles</p>
+        </div>
+        <div class="border-t border-white/[.07] px-5 py-7 text-center sm:border-t-0">
+          <p class="text-2xl font-bold">2027</p>
+          <p class="mt-1 font-mono text-[10px] uppercase tracking-widest text-zinc-500">Graduation</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="mx-auto max-w-6xl px-5 py-28 sm:px-8">
+      <div class="grid gap-14 lg:grid-cols-[.7fr_1.3fr]">
+        <div class="reveal">
+          <p class="font-mono text-xs uppercase tracking-[.25em] text-zinc-500">01 / About</p>
+          <h2 class="mt-4 text-4xl font-bold tracking-tight sm:text-5xl">Engineer mindset.<br><span class="text-zinc-500">Builder mentality.</span></h2>
         </div>
 
-    </section>
-    <hr>
+        <div class="reveal">
+          <p class="text-lg leading-8 text-zinc-300">
+            I'm Krishna, a final-year BSc Animation student with a minor in Computer Applications,
+            focused on software engineering and backend development.
+          </p>
+          <p class="mt-5 leading-7 text-zinc-500">
+            My current focus is Java and Spring Boot, backed by strong fundamentals in DSA,
+            databases, OOP and web development. I like building complete applications rather than
+            collecting technologies on a resume.
+          </p>
 
-    <section id="projects" class="projs">
-        <span class="title">Experience</span>
-        <div class="projItems">
-            <div class="box mb-1">
-                <h2>A two Months training and internship program</h2>
-                <p>A two months of intensive training and internship program focused on web development.</p>
-
-                <p style="margin-top: 1rem;">July 2025 - Present</p>
+          <div class="mt-8 grid gap-3 sm:grid-cols-2">
+            <div class="card rounded-2xl p-5 transition">
+              <p class="font-mono text-xs text-zinc-500">CURRENT FOCUS</p>
+              <p class="mt-2 font-semibold">Java · Spring Boot · DSA</p>
             </div>
+            <div class="card rounded-2xl p-5 transition">
+              <p class="font-mono text-xs text-zinc-500">EDUCATION</p>
+              <p class="mt-2 font-semibold">BSc Animation · 2024–2027</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="border-y border-white/[.07] bg-white/[.015]">
+      <div class="mx-auto max-w-6xl px-5 py-28 sm:px-8">
+        <div class="reveal">
+          <p class="font-mono text-xs uppercase tracking-[.25em] text-zinc-500">02 / Technical Skills</p>
+          <h2 class="mt-4 text-4xl font-bold tracking-tight sm:text-5xl">Tools I actually use.</h2>
         </div>
 
+        <div class="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          <div class="card reveal rounded-2xl p-6 transition">
+            <p class="font-mono text-xs text-zinc-500">LANGUAGES</p>
+            <div class="mt-5 flex flex-wrap gap-2">
+              <span class="skill">Java</span><span class="skill">C++</span><span class="skill">JavaScript</span><span class="skill">SQL</span><span class="skill">HTML</span><span class="skill">CSS</span>
+            </div>
+          </div>
+
+          <div class="card reveal rounded-2xl p-6 transition">
+            <p class="font-mono text-xs text-zinc-500">BACKEND</p>
+            <div class="mt-5 flex flex-wrap gap-2">
+              <span class="skill">Spring</span><span class="skill">Spring Boot</span><span class="skill">REST APIs</span><span class="skill">Spring Security</span><span class="skill">JPA / Hibernate</span>
+            </div>
+          </div>
+
+          <div class="card reveal rounded-2xl p-6 transition">
+            <p class="font-mono text-xs text-zinc-500">FRONTEND</p>
+            <div class="mt-5 flex flex-wrap gap-2">
+              <span class="skill">React.js</span><span class="skill">Next.js</span><span class="skill">Tailwind CSS</span><span class="skill">Responsive UI</span>
+            </div>
+          </div>
+
+          <div class="card reveal rounded-2xl p-6 transition">
+            <p class="font-mono text-xs text-zinc-500">DATABASE</p>
+            <div class="mt-5 flex flex-wrap gap-2">
+              <span class="skill">MySQL</span><span class="skill">MongoDB</span><span class="skill">H2</span><span class="skill">Database Design</span>
+            </div>
+          </div>
+
+          <div class="card reveal rounded-2xl p-6 transition">
+            <p class="font-mono text-xs text-zinc-500">FUNDAMENTALS</p>
+            <div class="mt-5 flex flex-wrap gap-2">
+              <span class="skill">DSA</span><span class="skill">OOP</span><span class="skill">DBMS</span><span class="skill">OS</span><span class="skill">Computer Networks</span><span class="skill">LLD</span>
+            </div>
+          </div>
+
+          <div class="card reveal rounded-2xl p-6 transition">
+            <p class="font-mono text-xs text-zinc-500">TOOLS</p>
+            <div class="mt-5 flex flex-wrap gap-2">
+              <span class="skill">Git</span><span class="skill">GitHub</span><span class="skill">Docker</span><span class="skill">Linux</span><span class="skill">GitHub Actions</span><span class="skill">Vercel</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
-    <hr>
 
+    <!-- PROJECTS -->
+    <section id="projects" class="mx-auto max-w-6xl px-5 py-28 sm:px-8">
+      <div class="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
+        <div class="reveal">
+          <p class="font-mono text-xs uppercase tracking-[.25em] text-zinc-500">03 / Selected Work</p>
+          <h2 class="mt-4 text-4xl font-bold tracking-tight sm:text-5xl">Things I've built.</h2>
+        </div>
+        <a href="projects.html" class="reveal text-sm text-zinc-500 transition hover:text-white">View all projects →</a>
+      </div>
 
-    <section id="projects" class="projs">
-        <span class="title">My projects</span>
-        <div class="projItems">
-            <div class="box mb-1">
-                <h2>Task tracker - Note taking website</h2>
-                <p>A streamlined task-tracking website to efficiently manage daily activities</p>
-                <a href="/portfolio/project/tasktracker.html"><button class="btn-1">View</button></a>
-            </div>
-            <div class="box mb-1">
-                <h2>Passkeys - Manages and saves password</h2>
-                <p>A secure and user-friendly tool to manage all your passwords in one place.</p>
-                <a href="/portfolio/project/passkeys.html"><button class="btn-1">View</button></a>
-            </div>
+      <div class="mt-12 grid gap-5 lg:grid-cols-2">
+
+        <article class="card reveal group rounded-3xl p-7 transition duration-300">
+          <div class="flex items-start justify-between">
+            <span class="font-mono text-xs text-zinc-600">01</span>
+            <span class="rounded-full border border-white/10 px-3 py-1 font-mono text-[10px] text-zinc-400">MERN</span>
+          </div>
+          <h3 class="mt-10 text-2xl font-bold">TaskTracker</h3>
+          <p class="mt-3 max-w-xl leading-7 text-zinc-500">
+            Task and notes management platform designed to organize daily work,
+            priorities and progress with authentication and a full-stack architecture.
+          </p>
+          <div class="mt-6 flex flex-wrap gap-2">
+            <span class="tech">MongoDB</span><span class="tech">Express</span><span class="tech">React</span><span class="tech">Node.js</span><span class="tech">JWT</span>
+          </div>
+          <a href="project/tasktracker.html" class="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-white transition group-hover:gap-3">View project <span>→</span></a>
+        </article>
+
+        <article class="card reveal group rounded-3xl p-7 transition duration-300">
+          <div class="flex items-start justify-between">
+            <span class="font-mono text-xs text-zinc-600">02</span>
+            <span class="rounded-full border border-white/10 px-3 py-1 font-mono text-[10px] text-zinc-400">NEXT.JS</span>
+          </div>
+          <h3 class="mt-10 text-2xl font-bold">PassKeys</h3>
+          <p class="mt-3 max-w-xl leading-7 text-zinc-500">
+            Password manager focused on storing, generating and managing credentials
+            through a clean, responsive interface.
+          </p>
+          <div class="mt-6 flex flex-wrap gap-2">
+            <span class="tech">Next.js</span><span class="tech">React</span><span class="tech">Tailwind</span><span class="tech">Local Storage</span>
+          </div>
+          <a href="project/passkeys.html" class="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-white transition group-hover:gap-3">View project <span>→</span></a>
+        </article>
+
+        <article class="card reveal group rounded-3xl p-7 transition duration-300">
+          <div class="flex items-start justify-between">
+            <span class="font-mono text-xs text-zinc-600">03</span>
+            <span class="rounded-full border border-white/10 px-3 py-1 font-mono text-[10px] text-zinc-400">EDUCATION</span>
+          </div>
+          <h3 class="mt-10 text-2xl font-bold">AlgoFlame</h3>
+          <p class="mt-3 max-w-xl leading-7 text-zinc-500">
+            Coding education platform publishing tutorials around DSA, C++, JavaScript,
+            Java, Python and web development.
+          </p>
+          <div class="mt-6 flex flex-wrap gap-2">
+            <span class="tech">Next.js</span><span class="tech">Tailwind CSS</span><span class="tech">SEO</span><span class="tech">DSA</span>
+          </div>
+          <a href="https://www.algoflame.com/" target="_blank" rel="noreferrer" class="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-white transition group-hover:gap-3">Visit AlgoFlame <span>↗</span></a>
+        </article>
+
+        <article class="card reveal group rounded-3xl p-7 transition duration-300">
+          <div class="flex items-start justify-between">
+            <span class="font-mono text-xs text-zinc-600">04</span>
+            <span class="rounded-full border border-white/10 px-3 py-1 font-mono text-[10px] text-zinc-400">REACT</span>
+          </div>
+          <h3 class="mt-10 text-2xl font-bold">SmashersMedia</h3>
+          <p class="mt-3 max-w-xl leading-7 text-zinc-500">
+            News application powered by News API with category-based headlines and
+            a responsive interface for browsing current stories.
+          </p>
+          <div class="mt-6 flex flex-wrap gap-2">
+            <span class="tech">React.js</span><span class="tech">News API</span><span class="tech">Bootstrap</span><span class="tech">REST API</span>
+          </div>
+          <a href="project/smashersmedia.html" class="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-white transition group-hover:gap-3">View project <span>→</span></a>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROBLEM SOLVING -->
+    <section id="profiles" class="border-y border-white/[.07] bg-white/[.015]">
+      <div class="mx-auto max-w-6xl px-5 py-28 sm:px-8">
+
+        <div class="grid gap-10 lg:grid-cols-[.8fr_1.2fr]">
+          <div class="reveal">
+            <p class="font-mono text-xs uppercase tracking-[.25em] text-zinc-500">04 / Problem Solving</p>
+            <h2 class="mt-4 text-4xl font-bold tracking-tight sm:text-5xl">
+              I don't just build.<br>
+              <span class="text-zinc-500">I solve.</span>
+            </h2>
+          </div>
+
+          <div class="reveal">
+            <p class="leading-8 text-zinc-400">
+              Problem solving is a core part of my software engineering preparation.
+              I focus on understanding patterns, writing efficient solutions and
+              re-solving problems instead of simply chasing problem counts.
+            </p>
+          </div>
         </div>
 
-    </section>
-    <hr>
+        <!-- PROFILE CARDS -->
+        <div class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
 
-    <section class="testimonials" id="contact">
-        <span class="title">Contact Me</span>
-        <div class="testItems">
-           <p class="items"> <b>Github</b> - <a class="gitlink" href="https://github.com/Krishna1062" style="color: rgb(255, 25, 64); text-decoration:none;" target="_blank">Click here to open Github</a></p>
-           <p class="items"> <b>LinkedIn</b> - <a class="gitlink" href="https://www.linkedin.com/in/imkrishnashinde" style="color: rgb(255, 25, 64); text-decoration:none;"  target="_blank">Open LinkedIn</a></p>
-           <p class="items"> <b>Email</b> - krishna161062@gmail.com</p>
+          <!-- LeetCode -->
+          <a href="https://leetcode.com/u/imkrishnashinde/" target="_blank" rel="noreferrer"
+             class="card group reveal rounded-2xl p-6 transition duration-300 hover:-translate-y-1">
+            <div class="flex items-start justify-between">
+              <div class="grid h-11 w-11 place-items-center rounded-xl border border-white/10 bg-white/[.04] font-bold text-sm">
+                LC
+              </div>
+              <span class="font-mono text-xs text-zinc-600">01</span>
+            </div>
+
+            <h3 class="mt-7 text-xl font-bold">LeetCode</h3>
+            <p class="mt-2 text-sm text-zinc-500">Primary problem-solving platform</p>
+
+            <div class="mt-6 flex items-end justify-between">
+              <div>
+                <p class="text-2xl font-bold">200+</p>
+                <p class="mt-1 font-mono text-[10px] uppercase tracking-widest text-zinc-600">Problems solved</p>
+              </div>
+              <span class="text-zinc-500 transition group-hover:translate-x-1 group-hover:text-white">↗</span>
+            </div>
+          </a>
+
+          <!-- GeeksforGeeks -->
+          <a href="https://www.geeksforgeeks.org/profile/krishnai7vf" target="_blank" rel="noreferrer"
+             class="card group reveal rounded-2xl p-6 transition duration-300 hover:-translate-y-1">
+            <div class="flex items-start justify-between">
+              <div class="grid h-11 w-11 place-items-center rounded-xl border border-white/10 bg-white/[.04] font-bold text-sm">
+                GFG
+              </div>
+              <span class="font-mono text-xs text-zinc-600">02</span>
+            </div>
+
+            <h3 class="mt-7 text-xl font-bold">GeeksforGeeks</h3>
+            <p class="mt-2 text-sm text-zinc-500">DSA & computer science practice</p>
+
+            <div class="mt-6 flex items-end justify-between">
+              <div>
+                <p class="text-lg font-semibold text-zinc-300">Profile</p>
+                <p class="mt-1 font-mono text-[10px] uppercase tracking-widest text-zinc-600">View activity</p>
+              </div>
+              <span class="text-zinc-500 transition group-hover:translate-x-1 group-hover:text-white">↗</span>
+            </div>
+          </a>
+
+          <!-- DSA Patterns -->
+          <div class="card reveal rounded-2xl p-6 transition duration-300">
+            <div class="flex items-start justify-between">
+              <div class="grid h-11 w-11 place-items-center rounded-xl border border-white/10 bg-white/[.04] font-bold text-sm">
+                DSA
+              </div>
+              <span class="font-mono text-xs text-zinc-600">03</span>
+            </div>
+
+            <h3 class="mt-7 text-xl font-bold">Core Patterns</h3>
+            <p class="mt-2 text-sm text-zinc-500">Patterns I practice regularly</p>
+
+            <div class="mt-5 flex flex-wrap gap-2">
+              <span class="skill">Arrays</span>
+              <span class="skill">Binary Search</span>
+              <span class="skill">2 Pointers</span>
+              <span class="skill">Sliding Window</span>
+              <span class="skill">Greedy</span>
+              <span class="skill">Recursion</span>
+              <span class="skill">Stack</span>
+              <span class="skill">Linked List</span>
+            </div>
+          </div>
+
         </div>
+      </div>
     </section>
-    <hr>
 
-    <section class="about bg-1" id="about">
-        <span>About me</span>
-        <p>Hey, I am a web developer, and I can create both static and dynamic websites for you. You can visit my GitHub profile above to explore more about my work. Having a personal or professional website is essential for everyone, and if you run any kind of business, a website can greatly help in promoting it. I will be your personal website developer, capable of creating static websites using HTML, CSS, and JavaScript, as well as dynamic websites using the MERN stack. I will design a responsive and visually appealing website tailored to your requirements.</p>
+    <!-- CONTACT -->
+    <section id="contact" class="mx-auto max-w-6xl px-5 py-28 sm:px-8">
+      <div class="reveal rounded-3xl border border-white/10 bg-white/[.035] p-8 text-center sm:p-14">
+        <p class="font-mono text-xs uppercase tracking-[.25em] text-zinc-500">05 / Contact</p>
+        <h2 class="mx-auto mt-5 max-w-3xl text-4xl font-bold tracking-tight sm:text-6xl">
+          Let's build something<br><span class="text-zinc-500">worth shipping.</span>
+        </h2>
+        <p class="mx-auto mt-5 max-w-xl leading-7 text-zinc-500">
+          I'm currently looking for software engineering opportunities, internships and
+          projects where I can contribute and keep growing.
+        </p>
+
+        <div class="mt-9 flex flex-wrap justify-center gap-3">
+          <a href="mailto:krishna161062@gmail.com" class="rounded-xl bg-white px-5 py-3.5 text-sm font-semibold text-black transition hover:bg-zinc-200">
+            Email me
+          </a>
+          <a href="https://www.linkedin.com/in/imkrishnashinde/" target="_blank" rel="noreferrer" class="rounded-xl border border-white/10 px-5 py-3.5 text-sm font-semibold text-white transition hover:bg-white/5">
+            LinkedIn ↗
+          </a>
+          <a href="https://github.com/Krishna1062" target="_blank" rel="noreferrer" class="rounded-xl border border-white/10 px-5 py-3.5 text-sm font-semibold text-white transition hover:bg-white/5">
+            GitHub ↗
+          </a>
+        </div>
+      </div>
     </section>
-    <hr>
+  </main>
 
-        <section class="footer">
-            <h2>Krishna Shinde</h2>
-            <p><a href="/portfolio/resume.html">Resume</a> &nbsp;|&nbsp; <a href="/portfolio/projects.html">Projects</a> &nbsp;|&nbsp; <a href="#">Back to Top</a></p>
-        </section>
-    <script src="/portfolio/js/script.js"></script>
+  <!-- FOOTER -->
+  <footer class="border-t border-white/[.07]">
+    <div class="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-8 text-sm text-zinc-600 sm:flex-row sm:items-center sm:justify-between sm:px-8">
+      <p>© <span id="year"></span> Krishna Shinde</p>
+      <p class="font-mono text-xs">JAVA · SPRING BOOT · REACT · DSA</p>
+    </div>
+  </footer>
+
+  <style>
+    .skill, .tech {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 9999px;
+      background: rgba(255,255,255,.035);
+      color: #a1a1aa;
+      padding: .4rem .65rem;
+      font-size: .72rem;
+    }
+    .skill:hover, .tech:hover {
+      color: #fff;
+      border-color: rgba(255,255,255,.18);
+    }
+  </style>
+
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    menuBtn?.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+
+    document.querySelectorAll("#mobileMenu a").forEach(link => {
+      link.addEventListener("click", () => mobileMenu.classList.add("hidden"));
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const observer = new IntersectionObserver(
+      entries => entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add("show");
+      }),
+      { threshold: 0.08 }
+    );
+
+    document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+  </script>
 </body>
-
 </html>

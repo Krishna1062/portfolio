@@ -1,110 +1,621 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/portfolio/css/style.css">
-    <link rel="stylesheet" href="/portfolio/css/resp.css">
-    <link rel="shortcut icon" href="images/img.png" type="image/x-icon">
-    <title>Krishna Shinde - Projects</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Projects by Krishna Shinde — Java, Spring Boot, React, Next.js and full-stack projects.">
+  <meta name="theme-color" content="#070707">
+  <title>Projects — Krishna Shinde</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; }
+    body { background:#070707; }
+
+    ::selection {
+      background:#fff;
+      color:#000;
+    }
+
+    .grid-bg {
+      background-image:
+        linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px);
+      background-size:48px 48px;
+      mask-image:linear-gradient(to bottom, black, transparent 80%);
+      -webkit-mask-image:linear-gradient(to bottom, black, transparent 80%);
+    }
+
+    .noise {
+      background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.035'/%3E%3C/svg%3E");
+    }
+
+    .card {
+      background:linear-gradient(145deg,rgba(255,255,255,.065),rgba(255,255,255,.022));
+      border:1px solid rgba(255,255,255,.09);
+    }
+
+    .card:hover {
+      border-color:rgba(255,255,255,.22);
+      transform:translateY(-5px);
+    }
+
+    .tag {
+      display:inline-flex;
+      align-items:center;
+      border:1px solid rgba(255,255,255,.08);
+      background:rgba(255,255,255,.035);
+      color:#a1a1aa;
+      border-radius:999px;
+      padding:.4rem .65rem;
+      font-size:.7rem;
+      white-space:nowrap;
+    }
+
+    .reveal {
+      opacity:0;
+      transform:translateY(18px);
+      transition:opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.show {
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    .filter-active {
+      background:#fff !important;
+      color:#000 !important;
+      border-color:#fff !important;
+    }
+  </style>
 </head>
 
-<body>
-    <header class="background">
-        <nav class="left">
-            <h1><a class="brandLogo" href="/portfolio/"><span class="brand">Krishna Shinde</span></a></h1>
-        </nav>
-        <nav class="right">
-            <ul>
-                <li><a href="/portfolio/">Home</a></li>
-                <li><a href="/portfolio/resume.html">Resume</a></li>
-                <li><a href="/portfolio/projects.html">My projects</a></li>
-                <li><a href="https://www.linkedin.com/in/imkrishnashinde/" target="_blank">LinkedIn</a></li>
-                <li><a href="https://leetcode.com/imkrishnashinde" target="_blank">Leetcode</a></li>
-                <li><a href="/portfolio/certificate.html">My certificates</a></li>
-                <li><a href="/portfolio/#contact">Contact me</a></li>
-                <li><a href="/portfolio/#about">About me</a></li>
-            </ul>
-        </nav>
-        <div class="burger" id="burger">
-            <svg class="lines h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <title>Menu</title>
-                <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
-            </svg>
-        </div>
-    </header>
-    <section id="projects" class="projs">
-        <span class="title">My projects</span>
-        <div class="projItems">
-            <div class="box mb-1">
-                <h2>Task tracker - Note taking website</h2>
-                <p>A streamlined task-tracking website to efficiently manage daily activities</p>
-                <a href="/portfolio/project/tasktracker.html"><button class="btn-1">View</button></a>
-            </div>
-            <div class="box mb-1">
-                <h2>Passkeys - Manages and saves password</h2>
-                <p>A secure and user-friendly tool to manage all your passwords in one place.</p>
-                <a href="/portfolio/project/passkeys.html"><button class="btn-1">View</button></a>
-            </div>
-        </div>
-        <div class="projItems">
-            <div class="box mb-1">
-                <h2>Algoflame - A Coding Blog</h2>
-                <p>A platform where I share the latest trends, tips, and tutorials in coding. <br> Creaated in Next js
-                </p>
-                <a href="https://www.algoflame.com" target="_blank"><button class="btn-1">View</button></a>
-            </div>
-            <div class="box mb-1">
-                <h2>SmashersMedia - A news wesbite</h2>
-                <p>Your go-to platform for the latest news and insights from around the world.</p>
-                <a href="/portfolio/project/smashersmedia.html"><button class="btn-1">View</button></a>
-            </div>
-        </div>
-        <div class="projItems">
-            <div class="box mb-1">
-                <h2>TextUtils - A text analyzer and formatter</h2>
-                <p>A simple tool for analyzing, formatting, and manipulating text effortlessly.</p>
-                <a href="/portfolio/project/textutils.html"><button class="btn-1">View</button></a>
-            </div>
-            <div class="box mb-1">
-                <h2>Netflix Clone</h2>
-                <p>A feature-rich streaming platform UI clone to browse Movies and TV shows.</p>
-                <a href="/portfolio/project/netflix.html"><button class="btn-1">View</button></a>
-            </div>
-        </div>
-        <div class="projItems">
-            <div class="box mb-1">
-                <h2>Unicorncss - A tech blog</h2>
-                <p>A platform sharing the latest trends, tips, and innovations in technology</p>
-                <a href="/portfolio/project/unicorncss.html"><button class="btn-1">View</button></a>
-            </div>
-            <div class="box mb-1">
-                <h2>Nerdcrafties - An educational website</h2>
-                <p>An platform offering educational courses to boost your learning journey.</p>
-                <a href="/portfolio/project/nerdcrafties.html"><button class="btn-1">View</button></a>
-            </div>
-        </div>
-        <div class="projItems">
-            <div class="box mb-1">
-                <h2>A portfolio website</h2>
-                <p>A professional showcase of skills and projects to highlight your expertise.</p>
-                <a href="/portfolio"><button class="btn-1">View</button></a>
-            </div>
-            <div class="box mb-1">
-                <h2>Spotify Clone</h2>
-                <p>A replica of Spotify's user interface for an immersive design experience</p>
-                <a href="/portfolio/project/spotify.html"><button class="btn-1">View</button></a>
-            </div>
-        </div>
+<body class="noise font-sans text-white antialiased">
 
+  <div class="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+    <div class="grid-bg absolute inset-0"></div>
+    <div class="absolute left-1/2 top-[-220px] h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-white/[.035] blur-3xl"></div>
+  </div>
+
+  <!-- NAVBAR -->
+  <header class="fixed left-0 right-0 top-0 z-50">
+    <nav class="mx-auto mt-4 flex max-w-6xl items-center justify-between rounded-2xl border border-white/10 bg-black/65 px-4 py-3 backdrop-blur-xl sm:px-5">
+
+      <a href="/portfolio/" class="flex items-center gap-3">
+        <span class="grid h-9 w-9 place-items-center rounded-xl border border-white/15 bg-white/5 font-mono text-sm font-semibold">KS</span>
+        <span class="hidden text-sm font-semibold sm:block">Krishna Shinde</span>
+      </a>
+
+      <div class="hidden items-center gap-6 text-sm text-zinc-400 md:flex">
+        <a href="/portfolio/" class="transition hover:text-white">Home</a>
+        <a href="/portfolio/#about" class="transition hover:text-white">About</a>
+        <a href="/portfolio/#skills" class="transition hover:text-white">Skills</a>
+        <a href="/portfolio/projects.html" class="text-white">Projects</a>
+        <a href="/portfolio/#profiles" class="transition hover:text-white">Profiles</a>
+        <a href="/portfolio/#contact" class="transition hover:text-white">Contact</a>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <a href="/portfolio/resume.html"
+           class="hidden rounded-xl border border-white/10 px-4 py-2 text-sm font-medium text-zinc-200 transition hover:border-white/25 hover:bg-white/5 sm:block">
+          Resume
+        </a>
+
+        <button id="menuBtn" aria-label="Open menu"
+          class="grid h-10 w-10 place-items-center rounded-xl border border-white/10 bg-white/5 md:hidden">
+          <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+            <path d="M4 7h16M4 12h16M4 17h16"/>
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <div id="mobileMenu" class="mx-4 mt-2 hidden rounded-2xl border border-white/10 bg-black/95 p-3 backdrop-blur-xl md:hidden">
+      <a href="/portfolio/" class="block rounded-xl px-4 py-3 text-zinc-300 hover:bg-white/5 hover:text-white">Home</a>
+      <a href="/portfolio/#about" class="block rounded-xl px-4 py-3 text-zinc-300 hover:bg-white/5 hover:text-white">About</a>
+      <a href="/portfolio/#skills" class="block rounded-xl px-4 py-3 text-zinc-300 hover:bg-white/5 hover:text-white">Skills</a>
+      <a href="/portfolio/projects.html" class="block rounded-xl bg-white/5 px-4 py-3 text-white">Projects</a>
+      <a href="/portfolio/#profiles" class="block rounded-xl px-4 py-3 text-zinc-300 hover:bg-white/5 hover:text-white">Profiles</a>
+      <a href="/portfolio/#contact" class="block rounded-xl px-4 py-3 text-zinc-300 hover:bg-white/5 hover:text-white">Contact</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="mx-auto max-w-6xl px-5 pb-16 pt-40 sm:px-8 sm:pb-20">
+      <div class="max-w-4xl reveal">
+        <p class="font-mono text-xs uppercase tracking-[.25em] text-zinc-500">03 / Selected Work</p>
+
+        <h1 class="mt-5 text-5xl font-extrabold tracking-[-.05em] sm:text-7xl">
+          Things I've built.
+        </h1>
+
+        <p class="mt-7 max-w-2xl text-base leading-7 text-zinc-400 sm:text-lg">
+          A collection of applications, platforms and experiments I've built while
+          learning software engineering, backend development and modern web technologies.
+        </p>
+
+        <div class="mt-8 flex flex-wrap gap-2 font-mono text-xs text-zinc-500">
+          <span>JAVA</span>
+          <span>•</span>
+          <span>SPRING BOOT</span>
+          <span>•</span>
+          <span>REACT</span>
+          <span>•</span>
+          <span>NEXT.JS</span>
+          <span>•</span>
+          <span>MYSQL</span>
+        </div>
+      </div>
     </section>
-        <section class="footer">
-            <h2>Krishna Shinde</h2>
-            <p><a href="/portfolio/resume.html">Resume</a> &nbsp;|&nbsp; <a href="/portfolio/projects.html">Projects</a> &nbsp;|&nbsp; <a href="#">Back to Top</a></p>
-        </section>
-    <script src="/portfolio/js/script.js"></script>
-</body>
 
+    <!-- FILTERS -->
+    <section class="mx-auto max-w-6xl px-5 sm:px-8">
+      <div class="flex flex-wrap gap-2 border-b border-white/[.08] pb-5 reveal">
+        <button class="filter-btn filter-active rounded-full border border-white/10 px-4 py-2 font-mono text-xs transition" data-filter="all">All</button>
+        <button class="filter-btn rounded-full border border-white/10 bg-white/[.03] px-4 py-2 font-mono text-xs text-zinc-400 transition hover:text-white" data-filter="fullstack">Full Stack</button>
+        <button class="filter-btn rounded-full border border-white/10 bg-white/[.03] px-4 py-2 font-mono text-xs text-zinc-400 transition hover:text-white" data-filter="frontend">Frontend</button>
+        <button class="filter-btn rounded-full border border-white/10 bg-white/[.03] px-4 py-2 font-mono text-xs text-zinc-400 transition hover:text-white" data-filter="content">Content / Blog</button>
+        <button class="filter-btn rounded-full border border-white/10 bg-white/[.03] px-4 py-2 font-mono text-xs text-zinc-400 transition hover:text-white" data-filter="clone">UI Clones</button>
+      </div>
+    </section>
+
+    <!-- FEATURED -->
+    <section class="mx-auto max-w-6xl px-5 py-12 sm:px-8 sm:py-16">
+
+      <div class="grid gap-5 lg:grid-cols-2">
+
+        <!-- TASK TRACKER -->
+        <article class="project-card featured card group reveal rounded-3xl p-7 transition duration-300 lg:col-span-2"
+                 data-category="fullstack">
+          <div class="grid gap-10 lg:grid-cols-[1.1fr_.9fr]">
+
+            <div>
+              <div class="flex items-start justify-between">
+                <span class="font-mono text-xs text-zinc-600">01 / FEATURED</span>
+                <span class="tag">FULL STACK</span>
+              </div>
+
+              <h2 class="mt-9 text-3xl font-bold tracking-tight sm:text-4xl">TaskTracker</h2>
+
+              <p class="mt-4 max-w-2xl leading-7 text-zinc-500">
+                A full-stack task and notes management application designed to help users
+                organize daily activities, manage tasks and keep their work structured.
+              </p>
+
+              <div class="mt-6 flex flex-wrap gap-2">
+                <span class="tag">MongoDB</span>
+                <span class="tag">Express.js</span>
+                <span class="tag">React.js</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">JWT</span>
+              </div>
+
+              <div class="mt-8 flex flex-wrap gap-3">
+                <a href="/portfolio/project/tasktracker.html"
+                   class="rounded-xl bg-white px-5 py-3 text-sm font-semibold text-black transition hover:bg-zinc-200">
+                  View project →
+                </a>
+              </div>
+            </div>
+
+            <div class="hidden min-h-[250px] overflow-hidden rounded-2xl border border-white/[.07] bg-[#0b0b0b] lg:block">
+              <div class="flex items-center gap-2 border-b border-white/[.07] px-5 py-4">
+                <span class="h-2.5 w-2.5 rounded-full bg-red-400/60"></span>
+                <span class="h-2.5 w-2.5 rounded-full bg-yellow-400/60"></span>
+                <span class="h-2.5 w-2.5 rounded-full bg-green-400/60"></span>
+                <span class="ml-auto font-mono text-[10px] text-zinc-600">task-tracker</span>
+              </div>
+              <div class="space-y-3 p-6">
+                <div class="h-3 w-3/4 rounded bg-white/10"></div>
+                <div class="h-2 w-full rounded bg-white/5"></div>
+                <div class="h-2 w-5/6 rounded bg-white/5"></div>
+                <div class="grid grid-cols-2 gap-3 pt-4">
+                  <div class="h-20 rounded-xl border border-white/10 bg-white/[.025]"></div>
+                  <div class="h-20 rounded-xl border border-white/10 bg-white/[.025]"></div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </article>
+
+        <!-- PASSKEYS -->
+        <article class="project-card card group reveal rounded-3xl p-7 transition duration-300"
+                 data-category="fullstack">
+          <div class="flex items-start justify-between">
+            <span class="font-mono text-xs text-zinc-600">02</span>
+            <span class="tag">NEXT.JS</span>
+          </div>
+
+          <div class="mt-10">
+            <h2 class="text-2xl font-bold">PassKeys</h2>
+            <p class="mt-3 leading-7 text-zinc-500">
+              A password management application for storing, generating and managing
+              credentials through a clean and responsive interface.
+            </p>
+
+            <div class="mt-6 flex flex-wrap gap-2">
+              <span class="tag">Next.js</span>
+              <span class="tag">React</span>
+              <span class="tag">Tailwind</span>
+              <span class="tag">Local Storage</span>
+            </div>
+
+            <a href="/portfolio/project/passkeys.html"
+               class="mt-8 inline-flex items-center gap-2 text-sm font-semibold transition group-hover:gap-3">
+              View project <span>→</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- ALGOFLAME -->
+        <article class="project-card card group reveal rounded-3xl p-7 transition duration-300"
+                 data-category="content">
+          <div class="flex items-start justify-between">
+            <span class="font-mono text-xs text-zinc-600">03</span>
+            <span class="tag">NEXT.JS</span>
+          </div>
+
+          <div class="mt-10">
+            <h2 class="text-2xl font-bold">AlgoFlame</h2>
+            <p class="mt-3 leading-7 text-zinc-500">
+              A coding education platform where I publish tutorials and articles
+              focused on DSA, programming and web development.
+            </p>
+
+            <div class="mt-6 flex flex-wrap gap-2">
+              <span class="tag">Next.js</span>
+              <span class="tag">Tailwind CSS</span>
+              <span class="tag">SEO</span>
+              <span class="tag">DSA</span>
+            </div>
+
+            <a href="https://www.algoflame.com/" target="_blank" rel="noreferrer"
+               class="mt-8 inline-flex items-center gap-2 text-sm font-semibold transition group-hover:gap-3">
+              Visit AlgoFlame <span>↗</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- SMASHERS -->
+        <article class="project-card card group reveal rounded-3xl p-7 transition duration-300"
+                 data-category="frontend">
+          <div class="flex items-start justify-between">
+            <span class="font-mono text-xs text-zinc-600">04</span>
+            <span class="tag">REACT</span>
+          </div>
+
+          <div class="mt-10">
+            <h2 class="text-2xl font-bold">SmashersMedia</h2>
+            <p class="mt-3 leading-7 text-zinc-500">
+              A news application using an external news API to provide category-based
+              headlines through a responsive interface.
+            </p>
+
+            <div class="mt-6 flex flex-wrap gap-2">
+              <span class="tag">React.js</span>
+              <span class="tag">News API</span>
+              <span class="tag">Bootstrap</span>
+              <span class="tag">REST API</span>
+            </div>
+
+            <a href="/portfolio/project/smashersmedia.html"
+               class="mt-8 inline-flex items-center gap-2 text-sm font-semibold transition group-hover:gap-3">
+              View project <span>→</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- TEXTUTILS -->
+        <article class="project-card card group reveal rounded-3xl p-7 transition duration-300"
+                 data-category="frontend">
+          <div class="flex items-start justify-between">
+            <span class="font-mono text-xs text-zinc-600">05</span>
+            <span class="tag">REACT</span>
+          </div>
+
+          <div class="mt-10">
+            <h2 class="text-2xl font-bold">TextUtils</h2>
+            <p class="mt-3 leading-7 text-zinc-500">
+              A lightweight text analyzer and formatter for manipulating, formatting
+              and understanding text quickly.
+            </p>
+
+            <div class="mt-6 flex flex-wrap gap-2">
+              <span class="tag">React.js</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">Bootstrap</span>
+            </div>
+
+            <a href="/portfolio/project/textutils.html"
+               class="mt-8 inline-flex items-center gap-2 text-sm font-semibold transition group-hover:gap-3">
+              View project <span>→</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- NETFLIX -->
+        <article class="project-card card group reveal rounded-3xl p-7 transition duration-300"
+                 data-category="clone">
+          <div class="flex items-start justify-between">
+            <span class="font-mono text-xs text-zinc-600">06</span>
+            <span class="tag">UI CLONE</span>
+          </div>
+
+          <div class="mt-10">
+            <h2 class="text-2xl font-bold">Netflix Clone</h2>
+            <p class="mt-3 leading-7 text-zinc-500">
+              A frontend recreation of the Netflix interface focused on layout,
+              responsive design and visual hierarchy.
+            </p>
+
+            <div class="mt-6 flex flex-wrap gap-2">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">Responsive UI</span>
+            </div>
+
+            <a href="/portfolio/project/netflix.html"
+               class="mt-8 inline-flex items-center gap-2 text-sm font-semibold transition group-hover:gap-3">
+              View project <span>→</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- NERDCRAFTIES -->
+        <article class="project-card card group reveal rounded-3xl p-7 transition duration-300"
+                 data-category="frontend">
+          <div class="flex items-start justify-between">
+            <span class="font-mono text-xs text-zinc-600">07</span>
+            <span class="tag">EDUCATION</span>
+          </div>
+
+          <div class="mt-10">
+            <h2 class="text-2xl font-bold">NerdCrafties</h2>
+            <p class="mt-3 leading-7 text-zinc-500">
+              An educational website designed to present learning resources and
+              courses through a structured, responsive interface.
+            </p>
+
+            <div class="mt-6 flex flex-wrap gap-2">
+              <span class="tag">HTML</span>
+              <span class="tag">Tailwind CSS</span>
+              <span class="tag">JavaScript</span>
+            </div>
+
+            <a href="/portfolio/project/nerdcrafties.html"
+               class="mt-8 inline-flex items-center gap-2 text-sm font-semibold transition group-hover:gap-3">
+              View project <span>→</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- SPOTIFY -->
+        <article class="project-card card group reveal rounded-3xl p-7 transition duration-300"
+                 data-category="clone">
+          <div class="flex items-start justify-between">
+            <span class="font-mono text-xs text-zinc-600">08</span>
+            <span class="tag">UI CLONE</span>
+          </div>
+
+          <div class="mt-10">
+            <h2 class="text-2xl font-bold">Spotify Clone</h2>
+            <p class="mt-3 leading-7 text-zinc-500">
+              A recreation of Spotify's web interface focused on responsive layouts,
+              navigation and visual styling.
+            </p>
+
+            <div class="mt-6 flex flex-wrap gap-2">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">Responsive UI</span>
+            </div>
+
+            <a href="/portfolio/project/spotify.html"
+               class="mt-8 inline-flex items-center gap-2 text-sm font-semibold transition group-hover:gap-3">
+              View project <span>→</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- UNICORNCSS -->
+        <article class="project-card card group reveal rounded-3xl p-7 transition duration-300"
+                 data-category="content">
+          <div class="flex items-start justify-between">
+            <span class="font-mono text-xs text-zinc-600">09</span>
+            <span class="tag">BLOG</span>
+          </div>
+
+          <div class="mt-10">
+            <h2 class="text-2xl font-bold">UnicornCSS</h2>
+            <p class="mt-3 leading-7 text-zinc-500">
+              A technology-focused blog concept covering trends, tips and innovations
+              across the software ecosystem.
+            </p>
+
+            <div class="mt-6 flex flex-wrap gap-2">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">JavaScript</span>
+            </div>
+
+            <a href="/portfolio/project/unicorncss.html"
+               class="mt-8 inline-flex items-center gap-2 text-sm font-semibold transition group-hover:gap-3">
+              View project <span>→</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- PORTFOLIO -->
+        <article class="project-card card group reveal rounded-3xl p-7 transition duration-300"
+                 data-category="frontend">
+          <div class="flex items-start justify-between">
+            <span class="font-mono text-xs text-zinc-600">10</span>
+            <span class="tag">PERSONAL</span>
+          </div>
+
+          <div class="mt-10">
+            <h2 class="text-2xl font-bold">Portfolio Website</h2>
+            <p class="mt-3 leading-7 text-zinc-500">
+              My personal developer portfolio built to showcase projects, technical
+              skills, problem-solving profiles and engineering journey.
+            </p>
+
+            <div class="mt-6 flex flex-wrap gap-2">
+              <span class="tag">HTML</span>
+              <span class="tag">Tailwind CSS</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">GitHub Pages</span>
+            </div>
+
+            <a href="/portfolio/"
+               class="mt-8 inline-flex items-center gap-2 text-sm font-semibold transition group-hover:gap-3">
+              View portfolio <span>→</span>
+            </a>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- EMPTY STATE -->
+      <div id="emptyState" class="hidden py-20 text-center">
+        <p class="font-mono text-sm text-zinc-600">NO PROJECTS FOUND</p>
+      </div>
+    </section>
+
+    <!-- PROJECT PHILOSOPHY -->
+    <section class="border-y border-white/[.07] bg-white/[.015]">
+      <div class="mx-auto max-w-6xl px-5 py-24 sm:px-8">
+        <div class="grid gap-10 lg:grid-cols-3">
+
+          <div class="reveal">
+            <p class="font-mono text-xs uppercase tracking-[.25em] text-zinc-500">What I build</p>
+            <h2 class="mt-4 text-3xl font-bold">Projects with a purpose.</h2>
+          </div>
+
+          <div class="reveal">
+            <p class="font-mono text-xs text-zinc-600">01</p>
+            <h3 class="mt-3 font-semibold">Learn by building</h3>
+            <p class="mt-2 text-sm leading-6 text-zinc-500">
+              Each project is an opportunity to understand how technologies work together,
+              not just how to follow a tutorial.
+            </p>
+          </div>
+
+          <div class="reveal">
+            <p class="font-mono text-xs text-zinc-600">02</p>
+            <h3 class="mt-3 font-semibold">Focus on fundamentals</h3>
+            <p class="mt-2 text-sm leading-6 text-zinc-500">
+              I care about clean APIs, data structures, database design, maintainable code
+              and understanding the trade-offs behind implementation choices.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="mx-auto max-w-6xl px-5 py-24 sm:px-8">
+      <div class="reveal rounded-3xl border border-white/10 bg-white/[.035] p-8 text-center sm:p-14">
+        <p class="font-mono text-xs uppercase tracking-[.25em] text-zinc-500">Have an opportunity?</p>
+        <h2 class="mx-auto mt-5 max-w-2xl text-4xl font-bold tracking-tight sm:text-5xl">
+          Let's build something
+          <span class="text-zinc-500">worth shipping.</span>
+        </h2>
+
+        <div class="mt-8 flex flex-wrap justify-center gap-3">
+          <a href="/portfolio/#contact"
+             class="rounded-xl bg-white px-5 py-3.5 text-sm font-semibold text-black transition hover:bg-zinc-200">
+            Get in touch
+          </a>
+          <a href="https://github.com/Krishna1062" target="_blank" rel="noreferrer"
+             class="rounded-xl border border-white/10 px-5 py-3.5 text-sm font-semibold transition hover:bg-white/5">
+            GitHub ↗
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/[.07]">
+    <div class="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-8 text-sm text-zinc-600 sm:flex-row sm:items-center sm:justify-between sm:px-8">
+      <p>© <span id="year"></span> Krishna Shinde</p>
+      <div class="flex gap-5">
+        <a href="/portfolio/resume.html" class="transition hover:text-white">Resume</a>
+        <a href="https://github.com/Krishna1062" target="_blank" rel="noreferrer" class="transition hover:text-white">GitHub</a>
+        <a href="https://www.linkedin.com/in/imkrishnashinde/" target="_blank" rel="noreferrer" class="transition hover:text-white">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+
+    document.querySelectorAll("#mobileMenu a").forEach(link => {
+      link.addEventListener("click", () => mobileMenu.classList.add("hidden"));
+    });
+
+    // Scroll reveal
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) entry.target.classList.add("show");
+        });
+      },
+      { threshold: 0.08 }
+    );
+
+    document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+
+    // Project filters
+    const buttons = document.querySelectorAll(".filter-btn");
+    const cards = document.querySelectorAll(".project-card");
+    const emptyState = document.getElementById("emptyState");
+
+    buttons.forEach(button => {
+      button.addEventListener("click", () => {
+        const filter = button.dataset.filter;
+
+        buttons.forEach(btn => {
+          btn.classList.remove("filter-active");
+        });
+        button.classList.add("filter-active");
+
+        let visible = 0;
+
+        cards.forEach(card => {
+          const matches = filter === "all" || card.dataset.category === filter;
+
+          if (matches) {
+            card.style.display = "";
+            visible++;
+          } else {
+            card.style.display = "none";
+          }
+        });
+
+        emptyState.classList.toggle("hidden", visible !== 0);
+      });
+    });
+  </script>
+
+</body>
 </html>
